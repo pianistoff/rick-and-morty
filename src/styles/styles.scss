@@ -94,6 +94,17 @@ body {
 }
 
 @media (min-width: 1090px) {
+  .logo {
+    max-width: 1050px;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+  }
+  .form {
+    max-width: 1050px;
+    margin-right: auto;
+    margin-left: auto;
+  }
   .cards {
     grid-template-columns: auto auto auto auto;
   }
