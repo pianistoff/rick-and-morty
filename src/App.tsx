@@ -1,11 +1,13 @@
-import React from "react";
+import type { FC } from "react";
+import { BrowserRouter } from "react-router-dom";
 
-const App: React.FC = () => {
+import RoutesList from "./RoutesList";
+
+const App: FC = () => {
   return (
-    <div>
-      <h1>Hello, world!</h1>
-      <p>This is a dummy app component.</p>
-    </div>
+    <BrowserRouter>
+      <RoutesList />
+    </BrowserRouter>
   );
 };
 
