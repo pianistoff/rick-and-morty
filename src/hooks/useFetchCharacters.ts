@@ -28,10 +28,10 @@ const useFetchCharacters = (): Character[] => {
     const fetchCharacters = async (): Promise<void> => {
       try {
         const response = await fetch(
-          "https://rickandmortyapi.com/api/character/1,2,3,4,5,6,7,8",
+          "https://rickandmortyapi.com/api/character/1,2,3,4,5,7,8,9",
         );
         const data = await response.json();
-        setCharacters(data.results);
+        setCharacters(data);
       } catch (error) {
         console.error(error);
       }
