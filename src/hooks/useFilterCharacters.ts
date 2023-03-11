@@ -36,7 +36,7 @@ const useFilterCharacters = (query: string): Character[] | "no matches" => {
         if (data.error === "There is nothing here") {
           setFilteredCharacters("no matches");
         } else {
-          setFilteredCharacters(data.results);
+          setFilteredCharacters(data.results.slice(0, 8));
         }
       } catch (error) {
         console.error(error);
