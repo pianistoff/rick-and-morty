@@ -21,24 +21,24 @@ interface Character {
   created: string;
 }
 
-const useFetchCharacters = (): Character[] => {
-  const [characters, setCharacters] = useState([]);
+const useFetchInitialCharacters = (): Character[] => {
+  const [initialCharacters, setinitialCharacters] = useState([]);
 
   useEffect(() => {
-    const fetchCharacters = async (): Promise<void> => {
+    const fetchInitialCharacters = async (): Promise<void> => {
       try {
         const response = await fetch(
           "https://rickandmortyapi.com/api/character/1,2,3,4,5,7,8,9",
         );
         const data = await response.json();
-        setCharacters(data);
+        setinitialCharacters(data);
       } catch (error) {
         console.error(error);
       }
     };
-    fetchCharacters().catch(console.error);
+    fetchInitialCharacters().catch(console.error);
   }, []);
-  return characters;
+  return initialCharacters;
 };
 
-export default useFetchCharacters;
+export default useFetchInitialCharacters;

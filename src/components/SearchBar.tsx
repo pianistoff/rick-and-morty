@@ -1,18 +1,22 @@
 import React, { useState } from "react";
 import type { FormEventHandler } from "react";
 
-const SearchBar: React.FC = () => {
-  const [query, setQuery] = useState("");
+interface SearchBarProps {
+  setSearchQuery: React.Dispatch<React.SetStateAction<string>>;
+}
+
+const SearchBar: React.FC<SearchBarProps> = ({ setSearchQuery }) => {
+  const [input, setInput] = useState("");
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
-    console.log(`Searching for "${query}"...`);
+    setSearchQuery(input);
   };
 
   const handleInputChange = (
     event: React.ChangeEvent<HTMLInputElement>,
   ): void => {
-    setQuery(event.target.value);
+    setInput(event.target.value);
   };
 
   return (
@@ -21,7 +25,7 @@ const SearchBar: React.FC = () => {
         <input
           type="text"
           placeholder="Filter by name..."
-          value={query}
+          value={input}
           onChange={handleInputChange}
           className="search-box"
         />

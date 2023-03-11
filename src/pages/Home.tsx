@@ -1,21 +1,42 @@
-import { type FC } from "react";
+import { type FC, useState } from "react";
 
 import Card from "../components/Card";
 import SearchBar from "../components/SearchBar";
-import useFetchCharacters from "../hooks/useFetchCharacters";
+import useFetchInitialCharacters from "../hooks/useFetchInitialCharacters";
+import useFilterCharacters from "../hooks/useFilterCharacters";
 import logo from "../images/logo.svg";
 
 const Home: FC = () => {
-  const characters = useFetchCharacters();
+  const [searchQuery, setSearchQuery] = useState("");
 
-  const cards = characters.map((card) => (
-    <Card
-      key={card.id}
-      name={card.name}
-      species={card.species}
-      image={card.image}
-    />
-  ));
+  const characters = useFetchInitialCharacters();
+  const filteredCharacters = useFilterCharacters(searchQuery);
+
+  const filteredCards =
+    filteredCharacters !== "no matches" ? (
+      filteredCharacters.map((card) => (
+        <Card
+          key={card.id}
+          name={card.name}
+          species={card.species}
+          image={card.image}
+        />
+      ))
+    ) : (
+      <p className="no-matches">No matches</p>
+    );
+
+  const cards =
+    searchQuery !== ""
+      ? filteredCards
+      : characters.map((card) => (
+          <Card
+            key={card.id}
+            name={card.name}
+            species={card.species}
+            image={card.image}
+          />
+        ));
 
   return (
     <>
@@ -24,7 +45,7 @@ const Home: FC = () => {
         alt="The logo that says `Rick and Morty`"
         className="logo"
       />
-      <SearchBar />
+      <SearchBar setSearchQuery={setSearchQuery} />
       <div className="cards">{cards}</div>
     </>
   );
