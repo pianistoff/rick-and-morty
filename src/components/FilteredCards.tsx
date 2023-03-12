@@ -11,12 +11,11 @@ interface FilteredCardsProps {
 const FilteredCards: FC<FilteredCardsProps> = ({ query }) => {
   const filterResults = useFetchFilteredCharacters(query);
 
-  console.log("ran");
-
   return filterResults === "no matches" ? (
     <p className="no-matches">No matches</p>
   ) : (
     <div className="cards">
+      ttgit commit -m "Prevent `useFetchFilteredCharacters` unnecessary call`"
       {filterResults.slice(0, 8).map((card) => (
         <Card
           key={card.id}
