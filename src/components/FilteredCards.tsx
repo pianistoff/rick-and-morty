@@ -11,19 +11,22 @@ interface FilteredCardsProps {
 const FilteredCards: FC<FilteredCardsProps> = ({ query }) => {
   const filterResults = useFetchFilteredCharacters(query);
 
-  return filterResults === "no matches" ? (
-    <p className="no-matches">No matches</p>
-  ) : (
+  return (
     <div className="cards">
-      ttgit commit -m "Prevent `useFetchFilteredCharacters` unnecessary call`"
-      {filterResults.slice(0, 8).map((card) => (
-        <Card
-          key={card.id}
-          name={card.name}
-          species={card.species}
-          image={card.image}
-        />
-      ))}
+      {filterResults === "no matches" ? (
+        <p className="no-matches">No matches</p>
+      ) : (
+        filterResults
+          .slice(0, 8)
+          .map((card) => (
+            <Card
+              key={card.id}
+              name={card.name}
+              species={card.species}
+              image={card.image}
+            />
+          ))
+      )}
     </div>
   );
 };
