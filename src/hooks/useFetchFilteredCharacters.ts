@@ -44,8 +44,8 @@ const useFetchFilteredCharacters = (
       info: { count: 0, pages: 0, next: null, prev: null },
       results: [],
     };
-    const finalCharacters: Character[] = [];
-    const call = async (url?: string): Promise<void> => {
+    const allFilteredCharacters: Character[] = [];
+    const fetchOnePage = async (url?: string): Promise<void> => {
       try {
         const response = await fetch(
           url ?? `https://rickandmortyapi.com/api/character/?name=${query}`,
@@ -58,19 +58,19 @@ const useFetchFilteredCharacters = (
         }
 
         if (data.results !== undefined) {
-          finalCharacters.push(...data.results);
+          allFilteredCharacters.push(...data.results);
         }
 
         if (data.info?.next !== null && data.info?.next !== undefined) {
-          call(data.info.next).catch(console.error);
+          fetchOnePage(data.info.next).catch(console.error);
         } else {
-          setFilteredCharacters(finalCharacters);
+          setFilteredCharacters(allFilteredCharacters);
         }
       } catch (error) {
         console.error(error);
       }
     };
-    call().catch(console.error);
+    fetchOnePage().catch(console.error);
   }, [query]);
 
   return filteredCharacters;
