@@ -73,8 +73,6 @@ const useFetchFilteredCharacters = (
     call().catch(console.error);
   }, [query]);
 
-  console.log(filteredCharacters);
-
   return filteredCharacters;
 };
 
