@@ -17,6 +17,9 @@ const FilteredCards: FC<FilteredCardsProps> = ({ query }) => {
         <p className="no-matches">No matches</p>
       ) : (
         filterResults
+          .sort((a, b) =>
+            a.name.toLowerCase().localeCompare(b.name.toLowerCase()),
+          )
           .slice(0, 8)
           .map((card) => (
             <Card
