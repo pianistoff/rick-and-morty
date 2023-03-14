@@ -1,7 +1,7 @@
 import { type FC } from "react";
 
 const Character: FC = () => {
-  return <div>Character</div>;
+  return <>Hello</>;
 };
 
 export default Character;

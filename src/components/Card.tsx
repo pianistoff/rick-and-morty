@@ -4,9 +4,10 @@ interface CardProps {
   name: string;
   species: string;
   image: string;
+  id: number;
 }
 
-const Card: React.FC<CardProps> = ({ name, species, image }) => {
+const Card: React.FC<CardProps> = ({ id, name, species, image }) => {
   return (
     <div className="card">
       <img src={image} alt="Charater" className="card-image" />
