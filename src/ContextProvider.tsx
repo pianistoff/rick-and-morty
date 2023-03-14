@@ -1,23 +1,26 @@
 import { useState, createContext, type ReactNode, type FC } from "react";
 
+type PositiveInteger = number & { __positiveIntegerBrand: unknown };
+type BaseURL = "https://rickandmortyapi.com/api";
+
 interface Character {
-  id: number;
+  id: PositiveInteger;
   name: string;
-  status: string;
+  status: "Alive" | "Dead" | "unknown";
   species: string;
   type: string;
-  gender: string;
+  gender: "Female" | "Male" | "Genderless" | "unknown";
   origin: {
     name: string;
-    url: string;
+    url: `${BaseURL}/location/${PositiveInteger}`;
   };
   location: {
     name: string;
-    url: string;
+    url: `${BaseURL}/location/${PositiveInteger}`;
   };
-  image: string;
-  episode: string[];
-  url: string;
+  image: `${BaseURL}/character/avatar/${PositiveInteger}.jpeg`;
+  episode: Array<`${BaseURL}/episode/${PositiveInteger}`>;
+  url: `${BaseURL}/character/${PositiveInteger}.jpeg`;
   created: string;
 }
 
