@@ -1,17 +1,12 @@
 import { type FC } from "react";
-import { useContext } from "react";
 import { useParams } from "react-router-dom";
 
-import type CharacterType from "../CharacterType";
-import { Context } from "../ContextProvider";
+import useFetchClickedCharacter from "../hooks/useFetchClickedCharcer";
 import arrowBack from "../images/arrow-back.png";
 
 const Character: FC = () => {
   const { id } = useParams<{ id: string }>();
-  const { characters } = useContext(Context) as { characters: CharacterType[] };
-  const character = characters.find(
-    (character) => character.id === Number(id),
-  ) as CharacterType;
+  const character = useFetchClickedCharacter(Number(id));
 
   return (
     <>

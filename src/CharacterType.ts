@@ -1,4 +1,4 @@
-interface Character {
+interface CharacterType {
   id: number;
   name: string;
   status: string;
@@ -19,4 +19,4 @@ interface Character {
   created: string;
 }
 
-export default Character;
+export default CharacterType;
