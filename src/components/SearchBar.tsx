@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import type { FormEventHandler } from "react";
+
+import useSessionStorageState from "../hooks/useSessionStorageState";
 
 interface SearchBarProps {
   setSearchQuery: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({ setSearchQuery }) => {
-  const [input, setInput] = useState("");
+  const [input, setInput] = useSessionStorageState("", "input");
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
