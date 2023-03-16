@@ -1,12 +1,16 @@
-import { type FC, useState } from "react";
+import { type FC } from "react";
 
 import FilteredCards from "../components/FilteredCards";
 import InitialCards from "../components/InitialCards";
 import SearchBar from "../components/SearchBar";
+import useSessionStorageState from "../hooks/useSessionStorageState";
 import logo from "../images/logo.svg";
 
 const Home: FC = () => {
-  const [searchQuery, setSearchQuery] = useState("");
+  const [filterQuery, setFilterQuery] = useSessionStorageState(
+    "",
+    "filterQuery",
+  );
 
   return (
     <>
@@ -15,9 +19,9 @@ const Home: FC = () => {
         alt="The logo that says `Rick and Morty`"
         className="logo"
       />
-      <SearchBar setSearchQuery={setSearchQuery} />
-      {searchQuery !== "" ? (
-        <FilteredCards query={searchQuery} />
+      <SearchBar setSearchQuery={setFilterQuery} />
+      {filterQuery !== "" ? (
+        <FilteredCards query={filterQuery} />
       ) : (
         <InitialCards />
       )}
