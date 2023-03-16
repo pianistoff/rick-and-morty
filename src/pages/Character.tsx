@@ -1,5 +1,5 @@
 import { type FC } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 import useFetchClickedCharacter from "../hooks/useFetchClickedCharcer";
 import arrowBack from "../images/arrow-back.png";
@@ -7,10 +7,15 @@ import arrowBack from "../images/arrow-back.png";
 const Character: FC = () => {
   const { id } = useParams<{ id: string }>();
   const character = useFetchClickedCharacter(Number(id));
+  const navigate = useNavigate();
+
+  const handleClick = (): void => {
+    navigate(-1);
+  };
 
   return (
     <>
-      <button className="button">
+      <button className="button" onClick={handleClick}>
         <img
           src={arrowBack}
           alt="Arrow pointins towards the back"
