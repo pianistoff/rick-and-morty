@@ -1,0 +1,49 @@
+.header {
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 0 20px;
+  margin-bottom: 20px;
+  height: 44px;
+}
+
+.logout-button {
+  background-color: #4285f4;
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #3367d6;
+}
+
+.google-icon {
+  margin-right: 8px;
+}
+
+.logged-in {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+}
+
+.username {
+  margin-left: auto;
+}
+
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
