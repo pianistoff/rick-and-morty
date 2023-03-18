@@ -34,6 +34,9 @@ const Header: FC = () => {
             onSuccess={(credentialResponse) => {
               setCredential(credentialResponse.credential);
             }}
+            onError={() => {
+              console.error("Couldn't log in");
+            }}
           />
         </div>
       ) : (
