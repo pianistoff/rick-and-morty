@@ -4,7 +4,7 @@ import FilteredCards from "../components/FilteredCards";
 import InitialCards from "../components/InitialCards";
 import SearchBar from "../components/SearchBar";
 import useSessionStorageState from "../hooks/useSessionStorageState";
-import logo from "../images/logo.svg";
+import logo from "../images/logo.png";
 
 const Home: FC = () => {
   const [filterQuery, setFilterQuery] = useSessionStorageState(

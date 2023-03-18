@@ -1,6 +1,7 @@
 {
   "name": "rick-and-morty",
   "version": "0.1.0",
+  "homepage": "https://pianistoff.github.io/rick-and-morty",
   "private": true,
   "dependencies": {
     "@fontsource/karla": "^4.5.11",
@@ -30,7 +31,9 @@
     "eject": "react-scripts eject",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -60,6 +63,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.32.2",
+    "gh-pages": "^5.0.0",
     "husky": "^8.0.0",
     "node-sass": "^7.0.3",
     "npm-run-all": "^4.1.5",
