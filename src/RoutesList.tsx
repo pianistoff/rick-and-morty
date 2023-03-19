@@ -7,9 +7,9 @@ import Home from "./pages/Home";
 const RoutesList: FC = () => {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/character/:id" element={<Character />} />
-      <Route path="*" element={<Navigate to="/" />} />
+      <Route path="/rick-and-mort/" element={<Home />} />
+      <Route path="/rick-and-mort/character/:id" element={<Character />} />
+      <Route path="/rick-and-mort/*" element={<Navigate to="/" />} />
     </Routes>
   );
 };
