@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/rick-and-morty/static/css/main.f4736abd.css",
-    "main.js": "/rick-and-morty/static/js/main.64cb83f5.js",
-    "static/media/logo.png": "/rick-and-morty/static/media/logo.5c28003d539faee999a1.png",
+    "main.css": "/rick-and-morty/static/css/main.ff5e4432.css",
+    "main.js": "/rick-and-morty/static/js/main.2bc9793a.js",
+    "static/media/logo.svg": "/rick-and-morty/static/media/logo.cc4a7d1826c4c03d11cfbf42cc844bae.svg",
     "static/media/roboto-all-500-normal.woff": "/rick-and-morty/static/media/roboto-all-500-normal.0ab669b7a0d19b178f57.woff",
     "static/media/roboto-all-700-normal.woff": "/rick-and-morty/static/media/roboto-all-700-normal.a457fde362a540fcadff.woff",
     "static/media/roboto-all-400-normal.woff": "/rick-and-morty/static/media/roboto-all-400-normal.c5d001fa922fa66a147f.woff",
@@ -31,11 +31,12 @@
     "static/media/roboto-greek-ext-400-normal.woff2": "/rick-and-morty/static/media/roboto-greek-ext-400-normal.169619821ea93019d1bb.woff2",
     "static/media/roboto-greek-ext-700-normal.woff2": "/rick-and-morty/static/media/roboto-greek-ext-700-normal.bd9854c751441ccc1a70.woff2",
     "index.html": "/rick-and-morty/index.html",
-    "main.f4736abd.css.map": "/rick-and-morty/static/css/main.f4736abd.css.map",
-    "main.64cb83f5.js.map": "/rick-and-morty/static/js/main.64cb83f5.js.map"
+    "static/media/search-icon.svg": "/rick-and-morty/static/media/search-icon.c77a50f238257623b5e0.svg",
+    "main.ff5e4432.css.map": "/rick-and-morty/static/css/main.ff5e4432.css.map",
+    "main.2bc9793a.js.map": "/rick-and-morty/static/js/main.2bc9793a.js.map"
   },
   "entrypoints": [
-    "static/css/main.f4736abd.css",
-    "static/js/main.64cb83f5.js"
+    "static/css/main.ff5e4432.css",
+    "static/js/main.2bc9793a.js"
   ]
 }
